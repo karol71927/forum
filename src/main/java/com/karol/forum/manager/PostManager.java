@@ -5,6 +5,7 @@ import com.karol.forum.dao.entity.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +31,8 @@ public class PostManager {
     }
 
     public Post save(Post post){
+        Date date = new Date(System.currentTimeMillis());
+        post.setDate(date);
         return postRepo.save(post);
     }
 

@@ -5,6 +5,7 @@ import com.karol.forum.dao.entity.Reply;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,5 +31,9 @@ public class ReplyManager {
 
     public void deleteById(Long id){
         replyRepo.deleteById(id);
+    }
+
+    public List<Reply> findByPostId(Long id){
+        return replyRepo.findByPostID(id);
     }
 }
