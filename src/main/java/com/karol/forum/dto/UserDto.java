@@ -1,5 +1,8 @@
 package com.karol.forum.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UserDto {
     private Long ID;
     private String login;
@@ -23,10 +26,12 @@ public class UserDto {
         this.login = login;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
 
+    @JsonProperty
     public void setPassword(String password) {
         this.password = password;
     }

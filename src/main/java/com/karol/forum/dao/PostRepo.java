@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PostRepo extends CrudRepository<Post, Long> {
-    List<Post> findByThemaLike(String thema);
+    List<Post> findByTopicLike(String topic);
 }

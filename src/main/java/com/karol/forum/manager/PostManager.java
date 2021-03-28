@@ -26,8 +26,8 @@ public class PostManager {
         return postRepo.findAll();
     }
 
-    public List<Post> findByThemaLike(String thema){
-        return postRepo.findByThemaLike(thema);
+    public List<Post> findByTopicLike(String topic){
+        return postRepo.findByTopicLike(topic);
     }
 
     public Post save(Post post){

@@ -5,6 +5,7 @@ import com.karol.forum.dao.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,14 @@ public class UserManager {
 
     public Optional<User> findById(Long id){
         return userRepo.findById(id);
+    }
+
+    public List<User> findByLogin(String login){
+        return userRepo.findByLogin(login);
+    }
+
+    public List<User> findByEmail(String email){
+        return userRepo.findByEmail(email);
     }
 
     public Iterable<User> findAll(){
