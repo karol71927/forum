@@ -1,14 +1,16 @@
 package com.karol.forum.dto;
 
 import java.util.Date;
+import java.util.Set;
 
 public class PostDto {
     private Long ID;
-    private String thema;
+    private String topic;
     private String text;
     private Date date;
     private Long CategoryId;
     private Long UserId;
+    private Set<ReplyDto> replyDtoSet;
 
     public Long getID() {
         return ID;
@@ -18,12 +20,12 @@ public class PostDto {
         this.ID = ID;
     }
 
-    public String getThema() {
-        return thema;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setThema(String thema) {
-        this.thema = thema;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public String getText() {
@@ -56,5 +58,13 @@ public class PostDto {
 
     public void setUserId(Long userId) {
         UserId = userId;
+    }
+
+    public Set<ReplyDto> getReplyDtoSet() {
+        return replyDtoSet;
+    }
+
+    public void setReplyDtoSet(Set<ReplyDto> replyDtoSet) {
+        this.replyDtoSet = replyDtoSet;
     }
 }

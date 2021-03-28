@@ -12,8 +12,8 @@ public class Post {
     @Column(name = "id_post")
     private Long ID;
 
-    @Column(name = "thema")
-    private String thema;
+    @Column(name = "topic")
+    private String topic;
 
     @Column(name = "text")
     private String text;
@@ -35,9 +35,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(Long ID, String thema, String text, Date date, Category category, Set<Reply> replies, User user) {
+    public Post(Long ID, String topic, String text, Date date, Category category, Set<Reply> replies, User user) {
         this.ID = ID;
-        this.thema = thema;
+        this.topic = topic;
         this.text = text;
         this.date = date;
         this.category = category;
@@ -53,12 +53,12 @@ public class Post {
         this.ID = ID;
     }
 
-    public String getThema() {
-        return thema;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setThema(String thema) {
-        this.thema = thema;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
     public String getText() {

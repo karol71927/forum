@@ -1,8 +1,11 @@
 package com.karol.forum.dto;
 
+import java.util.Date;
+
 public class ReplyDto {
     private Long ID;
     private String text;
+    private Date date;
     private Long postID;
     private Long userID;
 

@@ -1,6 +1,7 @@
 package com.karol.forum.dao.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "replies")
 public class Reply {
@@ -11,6 +12,9 @@ public class Reply {
 
     @Column(name = "text")
     private String text;
+
+    @Column(name = "date")
+    private Date date;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_post")
@@ -44,6 +48,14 @@ public class Reply {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Post getPost() {
