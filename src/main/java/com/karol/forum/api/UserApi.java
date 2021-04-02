@@ -55,7 +55,12 @@ public class UserApi {
             user.setPassword(password);
         }
         if(userDto.getEmail() != null){
-            user.setEmail(userDto.getEmail());
+            List<User> list = userManager.findByEmail(userDto.getEmail());
+            if(!list.isEmpty()){
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "user with this email already exists");
+            } else {
+                user.setEmail(userDto.getEmail());
+            }
         }
         User saved = userManager.save(user);
         UserDto userDto1 = modelMapper.map(saved, UserDto.class);
